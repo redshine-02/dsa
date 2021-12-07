@@ -22,7 +22,7 @@ public class multiply {
     public static int[][] mularray(int[][] A,int[][] B){
         int n1=A.length;
         int m1=A[0].length;
-        int n2=B.length;
+        //int n2=B.length;
         int m2=B[0].length;
         int[][] C=new int[n1][m2];
         for(int i=0;i<n1;i++){
