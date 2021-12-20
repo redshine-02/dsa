@@ -13,6 +13,7 @@ public class lastIndex {
         }
         int x=sc.nextInt();
         System.out.println(lastIndex(arr,arr.length-1,x));
+        //System.out.println(lastIndex(arr,0,x));
     }
 
     public static int lastIndex(int[] arr, int idx, int x){
@@ -27,5 +28,22 @@ public class lastIndex {
         }
         
     }
+
+    // public static int lastIndex1(int[] arr, int idx, int x){
+    //     if(idx==arr.length){
+    //         return -1;
+    //     }
+    //     int index=lastIndex(arr,idx+1,x);
+    //     if(index==-1){
+    //         if(arr[idx]==x){
+    //             return idx;
+    //         }
+    //         else{
+    //             return index;
+    //         }
+    //     }
+    //     else{
+    //         return index;
+    //     }}
 
 }
