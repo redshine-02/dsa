@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class p_encodings {
     
     public static void main(String args[])throws Exception{
         Scanner sc = new Scanner(System.in);
