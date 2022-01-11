@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class kpc {
 
     static String[] codes = {".;","abc","def","ghi","jkl","mno","pqrs","tu","vwx","yz"};
 

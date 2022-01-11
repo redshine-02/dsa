@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class mazepath {
 
     public static ArrayList<String> mazepath(int sr, int sc, int dr , int dc){
         if(sr==dr && sc==dc){

@@ -9,7 +9,7 @@ public class mazepath_jump {
         System.out.println(ans);
     }
 
-    public static ArrayList<String> mazepath_jump(int sr,int sc,int dr, int dc){
+    public static ArrayList<String> mazepath(int sr,int sc,int dr, int dc){
         if(sr==dr && sc==dc){
             ArrayList<String> base = new ArrayList<>();
             base.add("");
@@ -17,26 +17,27 @@ public class mazepath_jump {
         }
         ArrayList<String> myAns = new ArrayList<>();
 
-        for(int jump=1; sr+jump<=dr; jump++){
-            ArrayList<String> hm = mazepath_jump(sr+jump, sc, dr, dc);
-            for(String ele : hm){
+        for(int jump = 1;sc+jump<=dc;jump++){
+            ArrayList<String> hcall = mazepath(sr, sc+jump, dr, dc);
+            for(String ele : hcall){
                 myAns.add("h"+jump+ele);
             }
         }
 
-        for(int jump=1; sc+jump<=dc; jump++){
-            ArrayList<String> vm = mazepath_jump(sr+jump, sc, dr, dc);
-            for(String ele : vm){
+        for(int jump = 1;sr+jump<=dr;jump++){
+            ArrayList<String> vcall = mazepath(sr+jump, sc, dr, dc);
+            for(String ele : vcall){
                 myAns.add("v"+jump+ele);
             }
         }
 
-        for(int jump=1; sr+jump<=dr && sc+jump<=dc; jump++){
-            ArrayList<String> dm = mazepath_jump(sr+jump, sc+jump, dr, dc);
-            for(String ele : dm){
+        for(int jump = 1;sc+jump<=dc && sr+1<=dr;jump++){
+            ArrayList<String> dcall = mazepath(sr+jump, sc+jump, dr, dc);
+            for(String ele : dcall){
                 myAns.add("d"+jump+ele);
             }
         }
+
         return myAns;
     }
 }
