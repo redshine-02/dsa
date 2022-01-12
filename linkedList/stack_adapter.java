@@ -19,15 +19,26 @@ public class stack_adapter {
     void push(int val) {
       // write your code here
       list.addFirst(val);
+      /*YAHA IMPORTANT BAAT YEH HAI add.First he q kiya it is because jab element ko pop karne ki baat aai toh first
+      wale operation se constant time complexity mai woh node delete ho jaati hai that is why the af,rf,gf are preferred
+      over al,rl,gl */
     }
 
     int pop() {
       // write your code here
+      if(list.size()==0){
+        System.out.println("Stack underflow");
+        return -1;
+        }
       return list.removeFirst();
     }
 
     int top() {
       // write your code here
+      if(list.size()==0){
+        System.out.println("Stack underflow");
+        return -1;
+        }
       return list.getFirst();
     }
   }
