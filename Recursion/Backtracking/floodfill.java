@@ -11,7 +11,7 @@ to get to the best path*/
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class floodfill {
 
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
@@ -24,7 +24,7 @@ public class Main {
             }
         }
         //boolean[][] viz= new boolean[n][m];
-        floodfill(arr, 0, 0, "",viz);
+        floodfill(arr, 0, 0, "");
     }
 
 //METHOD 1
@@ -68,7 +68,7 @@ public class Main {
         static int[][] dir = {{0,-1},{-1,0},{0,1},{1,0}};
         static String[] dirN ={"t","l","d","r"};
         public static void floodfill(int[][] maze, int sr, int sc, String asf) {
-        if(sr<=maze.length || sc<=maze[0].length || sr>0 || sc<0 || maze[sr][sc]==1 || viz[sr][sc] == true){
+        if(sr<=maze.length || sc<=maze[0].length || sr>0 || sc<0 || maze[sr][sc]==1 ){
             return;
         }
         if(sr==maze.length-1 && sc==maze[0].length-1){

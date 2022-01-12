@@ -25,12 +25,12 @@ public class target_sum_subset {
 
         if(idx==arr.length){
             if(sum==tar){
-                System.out.println(asf);
+                System.out.println(asf+".");
             }
             return;
         }
         //print with
-        printTargetSumSubsets(arr, idx+1, asf+arr[idx]+",", sum+arr[idx], tar);
+        printTargetSumSubsets(arr, idx+1, asf+arr[idx]+", ", sum+arr[idx], tar);
 
         //print without
         printTargetSumSubsets(arr, idx+1, asf, sum, tar);
