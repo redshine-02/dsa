@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class add_at_index {
   public static class Node {
     int data;
     Node next;

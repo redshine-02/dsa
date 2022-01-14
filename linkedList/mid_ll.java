@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class reverse_data {
+public class mid_ll {
   public static class Node {
     int data;
     Node next;
@@ -154,40 +154,87 @@ public class reverse_data {
         size--;
       }
     }
-    
-    private Node getNodeAt(int idx){
-        if(size==0){
-            System.out.println("List is empty");
-            return null;
-        }
-        else if(idx<0 ||idx>=size){
-            System.out.println("Invalid arguments");
-            return null;
-        }
-        else{
-            Node temp = head;
-            for(int i=0;i<idx;i++){
-                temp=temp.next;
-            }
-            return temp;
-        }
+
+    private Node getNodeAt(int idx) {
+      Node temp = head;
+      for (int i = 0; i < idx; i++) {
+        temp = temp.next;
+      }
+      return temp;
     }
 
     public void reverseDI() {
-      // write your code here
-      int i=0;
-      int j=size-1;
-      
-      while(i<=j){
-          Node left = getNodeAt(i);
-          Node right = getNodeAt(j);
-          
-          int temp=left.data;
-          left.data=right.data;
-          right.data=temp;
-          i++;
-          j--;
+      int li = 0;
+      int ri = size - 1;
+      while(li < ri){
+        Node left = getNodeAt(li);
+        Node right = getNodeAt(ri);
+
+        int temp = left.data;
+        left.data = right.data;
+        right.data = temp;
+
+        li++;
+        ri--;
       }
+    }
+ 
+    public void reversePI(){
+      if(size <= 1){
+        return;
+      }
+
+      Node prev = null;
+      Node curr = head;
+      while(curr != null){
+        Node next = curr.next;
+        
+        curr.next = prev;
+        prev = curr;
+        curr = next;
+      }
+
+      Node temp = head;
+      head = tail;
+      tail = temp;
+    }
+  
+    public int kthFromLast(int k){
+      Node slow = head;
+      Node fast = head;
+      for(int i = 0; i < k; i++){
+        fast = fast.next;
+      }
+
+      while(fast != tail){
+        slow = slow.next;
+        fast = fast.next;
+      }
+
+      return slow.data;
+    }
+ 
+    public int mid(){
+      // write your code here
+      
+      Node f=head;
+      Node s=head;
+      // && operator is used beacuse if either of operation goes wrong then the loop terminates
+      // In an even linked list if we use || operator toh out of bound chala jayega because f.next true hoga but f.next.next false , hence complete operation true, Hence out of bound
+      while(f.next!=null && f.next.next!=null){
+          s=s.next;
+          f=f.next.next;
+      }
+      return s.data;
+    }
+    public static Node midNode(Node head, Node tail){
+        Node f=head;
+        Node s=head;
+        while(f!=tail && f.next!=tail){
+            f=f.next.next;
+            s=s.next;
+        }
+        return s;
     }
   }
 
@@ -236,6 +283,13 @@ public class reverse_data {
         list.removeAt(idx);
       } else if(str.startsWith("reverseDI")){
         list.reverseDI();
+      } else if(str.startsWith("reversePI")){
+        list.reversePI();
+      } else if(str.startsWith("kthFromEnd")){
+        int idx = Integer.parseInt(str.split(" ")[1]);
+        System.out.println(list.kthFromLast(idx));
+      } else if(str.startsWith("mid")){
+        System.out.println(list.mid());
       }
       str = br.readLine();
     }
