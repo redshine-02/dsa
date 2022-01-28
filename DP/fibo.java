@@ -17,6 +17,23 @@ public static int fibM(int n, int[]dp){
     return dp[n]=nm1+nm2;
 }
 
+//TABULATION
+public static int fibT(int N, int[]dp){
+    for(int n=0;n<dp.length;n++){
+    if(n<=1){
+       dp[n]=n;
+       continue;
+    }
+    int nm1=dp[n-1];//fibM(n-1,dp);
+    int nm2=dp[n-2];//fibM(n-2,dp);
+    dp[n]=nm1+nm2;
+        
+    }
+    return dp[N];
+    
+}
+
+
 //RECURSION
 public static int fibR(int n){
     if(n<=1){
