@@ -227,6 +227,19 @@ public class mid_ll {
       }
       return s.data;
     }
+    public int mid_n(){
+      // This function return the right hand side mid element in case of even linked list
+      
+      Node f=head;
+      Node s=head;
+      // && operator is used beacuse if either of operation goes wrong then the loop terminates
+      // In an even linked list if we use || operator toh out of bound chala jayega because f.next true hoga but f.next.next false , hence complete operation true, Hence out of bound
+      while(f!=null && f.next!=null){
+          s=s.next;
+          f=f.next.next;
+      }
+      return s.data;
+    }
     public static Node midNode(Node head, Node tail){
         Node f=head;
         Node s=head;
