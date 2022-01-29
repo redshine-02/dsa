@@ -40,8 +40,8 @@ public static int fibR(int n){
        return n;
     }
     
-    int nm1=fibM(n-1);
-    int nm2=fibM(n-2);
+    int nm1=fibR(n-1);
+    int nm2=fibR(n-2);
     return nm1+nm2;
 }
 

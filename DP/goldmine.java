@@ -22,9 +22,9 @@ public class goldmine {
         if(i<0 ||i>=grid.length || j>=grid[0].length)
          return 0; 
         
-         int op1=goldm(i-1,j+1,grid);
-         int op2=goldm(i,j+1,grid);
-         int op3=goldm(i+1,j+1,grid);
+         int op1=goldr(i-1,j+1,grid);
+         int op2=goldr(i,j+1,grid);
+         int op3=goldr(i+1,j+1,grid);
 
          int max= Math.max(op1,Math.max(op2,op3));
          max=max+grid[i][j];
