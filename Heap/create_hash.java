@@ -134,6 +134,7 @@ public class create_hash {
         HMNode node = temp.get(di);
         V val = node.value;
         temp.remove(di);
+        size--;
         return val;
 
       }
