@@ -1,19 +1,26 @@
 import java.io.*;
 import java.util.*;
 
-public class sort01 {
+public class sort012 {
 
-  public static void sort_01(int[] arr){
-    //write your code here
+  public static void sort_012(int[] arr){
+    int n = arr.length;
     int i = 0;
-    int j=0;
-    while(j<arr.length){
+    int j = 0;
+    int k = n-1;
+    while(j<=k){
       if(arr[j]==0){
         swap(arr,j,i);
-        i++;
-        
+          i++;
+          j++;
       }
-      j++;
+      else if(arr[j]==1){
+          j++;
+      }
+      else{
+        swap(arr,j,k);
+        k--;
+      }
     }
     
   }
@@ -38,7 +45,7 @@ public class sort01 {
     for(int i = 0 ;i < n; i++){
       arr[i] = scn.nextInt();
     }
-    sort_01(arr);
+    sort_012(arr);
     print(arr);
   }
 

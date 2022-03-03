@@ -1,19 +1,20 @@
 import java.io.*;
 import java.util.*;
 
-public class selection_sort {
+public class insertion_sort {
 
-  public static void selectionSort(int[] arr) {
+  public static void insertionSort(int[] arr) {
     //write your code here
-    int n= arr.length;
-    for(int x=0;x<n-1;x++){
-      int minIdx = x;
-      for(int i = x+1;i<n;i++){
-          if(isSmaller(arr,i,minIdx)==true){
-            minIdx=i;
-          }
+    int n = arr.length;
+    for(int x = 1;x<n;x++){
+      for(int i = x-1;i>=0;i--){
+        if(isGreater(arr,i,i+1)){
+          swap(arr,i,i+1);
+        }
+        else{
+          break;
+        }
       }
-      swap(arr,x,minIdx);
     }
     
   }
@@ -26,8 +27,8 @@ public class selection_sort {
     arr[j] = temp;
   }
 
-  // return true if ith element is smaller than jth element
-  public static boolean isSmaller(int[] arr, int i, int j) {
+  // return true if jth element is greater than ith element
+  public static boolean isGreater(int[] arr, int j, int i) {
     System.out.println("Comparing " + arr[i] + " and " + arr[j]);
     if (arr[i] < arr[j]) {
       return true;
@@ -49,7 +50,7 @@ public class selection_sort {
     for (int i = 0; i < n; i++) {
       arr[i] = scn.nextInt();
     }
-    selectionSort(arr);
+    insertionSort(arr);
     print(arr);
   }
 
