@@ -16,34 +16,30 @@ public class lastIndex {
         //System.out.println(lastIndex(arr,0,x));
     }
 
-    public static int lastIndex(int[] arr, int idx, int x){
-        if(idx==-1){
-            return -1;
-        }
-        if(arr[idx]==x){
-            return idx;
-        }
-        else{
-            return lastIndex(arr,idx-1,x);
-        }
-        
-    }
-
-    // public static int lastIndex1(int[] arr, int idx, int x){
-    //     if(idx==arr.length){
+    // public static int lastIndex(int[] arr, int idx, int x){
+    //     if(idx==-1){
     //         return -1;
     //     }
-    //     int index=lastIndex(arr,idx+1,x);
-    //     if(index==-1){
-    //         if(arr[idx]==x){
-    //             return idx;
-    //         }
-    //         else{
-    //             return index;
-    //         }
+    //     if(arr[idx]==x){
+    //         return idx;
     //     }
     //     else{
-    //         return index;
-    //     }}
+    //         return lastIndex(arr,idx-1,x);
+    //     }
+        
+    // }
+
+    public static int lastIndex1(int[] arr, int idx, int x){
+        if(idx==arr.length){
+            return -1;
+        }
+        int index=lastIndex(arr,idx+1,x);
+        if(index==-1  && arr[idx]==x){
+                return idx; 
+        }
+        else{
+            return index;
+        }
+    }
 
 }

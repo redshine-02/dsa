@@ -12,10 +12,10 @@ public class first_index {
             arr[i]=sc.nextInt();
         }
         int x=sc.nextInt();
-        System.out.println(firstIndex(arr,0,x));
+        System.out.println(first_Index(arr,0,x));
     }
 
-    public static int firstIndex(int[] arr, int idx, int x){
+    public static int first_Index(int[] arr, int idx, int x){
         if(idx==arr.length){
             return -1;
         }
@@ -23,7 +23,7 @@ public class first_index {
             return idx;
         }
         else{
-            return firstIndex(arr,idx+1,x);
+            return first_Index(arr,idx+1,x);
         }
         
     }

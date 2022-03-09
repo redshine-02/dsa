@@ -35,7 +35,8 @@ public class allindices {
         }
         int[] ans=allIndices(arr,x,idx+1,fsf);
         if(arr[idx]==x){
-            ans[fsf-1]=idx;
+            int i = fsf-1;
+            ans[i]=idx;
         }
         return ans;
     }
