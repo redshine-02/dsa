@@ -41,3 +41,20 @@ public class mazepath_jump {
         return myAns;
     }
 }
+// public static ArrayList<String> getStairPaths(int n) {
+//     if(n==0){
+//         ArrayList<String> base = new ArrayList<>();
+//         base.add("");
+//         return base;
+//     }
+//     ArrayList<String> myAns = new ArrayList<>();
+//     for(int jump=1;jump<=3;jump++){
+//         if(n-jump>=0){
+//             ArrayList<String> curr = getStairPaths(n-jump);
+//             for(String ele :  curr){
+//             myAns.add(jump+ele);
+//             }
+//         }
+//     }
+//     return myAns;
+// }

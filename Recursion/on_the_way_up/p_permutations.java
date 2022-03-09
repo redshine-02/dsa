@@ -6,6 +6,7 @@ public class p_permutations {
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
         printperm(str,"");
+        sc.close();
     }
     public static void printperm(String s , String ans){
         if(s.length()==0){
