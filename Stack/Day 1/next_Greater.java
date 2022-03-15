@@ -24,6 +24,20 @@ public static void main(String[] args) throws Exception {
     int[] nge = solve(a);
     display(nge);
  }
+//  ********** STACK IMPLEMENTATION ********** 
+ public static int[] solve(int[] arr){
+    int[] a = new int[arr.length];
+    Arrays.fill(a,-1);
+    Stack<Integer> st = new Stack<>();
+    for(int i = 0 ; i<arr.length ; i++){
+            while(st.size()!=0 && arr[i]>arr[st.peek()]){
+                a[st.peek()]=arr[i];
+                st.pop();
+            }
+        st.push(i);
+    }
+    return a;
+} 
 //  ********** BRUTE FORCE ********** 
 //  public static int[] solve(int[] arr){
 //    int[] a = new int[arr.length];
