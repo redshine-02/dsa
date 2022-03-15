@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Main{
+public class next_Greater_right{
   public static void display(int[] a){
     StringBuilder sb = new StringBuilder();
 
