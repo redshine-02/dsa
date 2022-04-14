@@ -37,6 +37,7 @@ public class display {
         if(size == 0){
             return;
         }
+        // Very important line don't forget
 
         Node curr = head;
         while(curr!=null){

@@ -26,7 +26,7 @@ public class addLast {
           tail.next = temp;
           tail = temp;
           //tail.next = null;
-          //Not necessary tp write the last line
+          //Not necessary to write the last line
           
       }
       size++;
