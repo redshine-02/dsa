@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class balance_paranthesis {
+public class balanced_paranthesis {
     public static boolean isBalanced(String s){
         Stack<Character> st = new Stack<>();
         for(int i = 0 ; i<s.length() ; i++){

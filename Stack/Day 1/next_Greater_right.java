@@ -30,7 +30,7 @@ public static void main(String[] args) throws Exception {
     Arrays.fill(a,-1);
     Stack<Integer> st = new Stack<>();
     for(int i = 0 ; i<arr.length ; i++){
-            while(st.size()!=0 && arr[i]>arr[st.peek()]){
+            while(st.size()!=0 && arr[i]>arr[st.peek()]){// In this block of while loop we are popping but aisa ho sakta hai n pop karte karte stack khali ho jaye hence UNDERFLOW
                 a[st.peek()]=arr[i];
                 st.pop();
             }

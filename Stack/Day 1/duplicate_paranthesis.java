@@ -27,7 +27,7 @@ public class duplicate_paranthesis {
 
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        String s = sc.nextLine();
+        String s = sc.nextLine();//sc.next() mai wrong answer aa rha hai
         System.out.println(balanced(s));
     }
 
