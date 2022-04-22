@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+public class valid_paranthesis {
     public boolean isValid(String s) {
         if(s.length()%2!=0){
             return false;
