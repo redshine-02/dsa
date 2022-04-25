@@ -9,7 +9,7 @@ public class TreeNode {
       TreeNode(int x) { val = x; }
  }
  
-public class LCA {
+class LCA {
     public ArrayList<TreeNode> nodeToRootPath(TreeNode node, int data){
     if(node == null){
           return new ArrayList<TreeNode>();
