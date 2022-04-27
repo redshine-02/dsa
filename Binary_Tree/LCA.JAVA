@@ -2,14 +2,14 @@
  //* Definition for a binary tree node.
 import java.util.*;
 
-public class TreeNode {
+class TreeNode {
       int val;
       TreeNode left;
       TreeNode right;
       TreeNode(int x) { val = x; }
  }
  
-class LCA {
+public class LCA {
     public ArrayList<TreeNode> nodeToRootPath(TreeNode node, int data){
     if(node == null){
           return new ArrayList<TreeNode>();
