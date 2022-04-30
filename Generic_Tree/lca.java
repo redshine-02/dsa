@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class height {
+public class lca {
   private static class Node {
     int data;
     ArrayList<Node> children = new ArrayList<>();
@@ -44,39 +44,40 @@ public class height {
     return root;
   }
 
-  public static int size(Node node) {
-    int s = 0;
+  public static ArrayList<Integer> nodeToRootPath(Node node, int data) {
+    if (node.data == data) {
+      ArrayList<Integer> path = new ArrayList<>();
+      path.add(node.data);
+      return path;
+    }
 
     for (Node child : node.children) {
-      s += size(child);
+      ArrayList<Integer> ptc = nodeToRootPath(child, data);
+      if (ptc.size() > 0) {
+        ptc.add(node.data);
+        return ptc;
+      }
     }
-    s += 1;
 
-    return s;
+    return new ArrayList<>();
   }
 
-  public static int max(Node node) {
-    int m = Integer.MIN_VALUE;
-
-    for (Node child : node.children) {
-      int cm = max(child);
-      m = Math.max(m, cm);
-    }
-    m = Math.max(m, node.data);
-
-    return m;
-  }
-
-  public static int height(Node node) {
-      if(node == null){
-          return -1;
+  public static int lca(Node node, int d1, int d2) {
+      ArrayList<Integer> v1 = nodeToRootPath(node,d1);
+      ArrayList<Integer> v2 = nodeToRootPath(node,d2);
+      
+      int i = v1.size()-1;
+      int j = v2.size()-1;
+      int LCA =-1;
+      while(i>=0 && j>=0){
+          if(v1.get(i)!=v2.get(j)){
+              break;
+          }
+          LCA = v1.get(i);
+          i--;
+          j--;
       }
-      int max = -1;
-      for(Node child : node.children){
-          int m = height(child);
-          max = Math.max(max,m);
-      }
-      return max+1;
+      return LCA;
   }
 
   public static void main(String[] args) throws Exception {
@@ -88,9 +89,12 @@ public class height {
       arr[i] = Integer.parseInt(values[i]);
     }
 
+    int d1 = Integer.parseInt(br.readLine());
+    int d2 = Integer.parseInt(br.readLine());
+
     Node root = construct(arr);
-    int h = height(root);
-    System.out.println(h);
+    int lca = lca(root, d1, d2);
+    System.out.println(lca);
     // display(root);
   }
 

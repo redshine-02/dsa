@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class height {
+public class node_To_RootPath {
   private static class Node {
     int data;
     ArrayList<Node> children = new ArrayList<>();
@@ -44,41 +44,28 @@ public class height {
     return root;
   }
 
-  public static int size(Node node) {
-    int s = 0;
-
-    for (Node child : node.children) {
-      s += size(child);
-    }
-    s += 1;
-
-    return s;
-  }
-
-  public static int max(Node node) {
-    int m = Integer.MIN_VALUE;
-
-    for (Node child : node.children) {
-      int cm = max(child);
-      m = Math.max(m, cm);
-    }
-    m = Math.max(m, node.data);
-
-    return m;
-  }
-
-  public static int height(Node node) {
-      if(node == null){
-          return -1;
-      }
-      int max = -1;
-      for(Node child : node.children){
-          int m = height(child);
-          max = Math.max(max,m);
-      }
-      return max+1;
-  }
-
+ public static ArrayList<Integer> nodeToRootPath(Node node, int data){
+     if(node == null){
+         return new ArrayList<Integer>();
+     }
+     if(node.data ==  data){
+         ArrayList<Integer> base =  new ArrayList<>();
+         base.add(node.data);
+         return base;
+     }
+     
+     for(Node child : node.children){
+         ArrayList<Integer> ch =  new ArrayList<>();
+        ch = nodeToRootPath(child,data);
+        if(ch.size()>0){
+            ch.add(node.data);
+            return ch;
+        }
+     }
+     
+      
+     return new ArrayList<Integer>();
+ }
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     int n = Integer.parseInt(br.readLine());
@@ -88,9 +75,11 @@ public class height {
       arr[i] = Integer.parseInt(values[i]);
     }
 
+    int data = Integer.parseInt(br.readLine());
+
     Node root = construct(arr);
-    int h = height(root);
-    System.out.println(h);
+    ArrayList<Integer> path = nodeToRootPath(root, data);
+    System.out.println(path);
     // display(root);
   }
 
