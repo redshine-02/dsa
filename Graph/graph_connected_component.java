@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class graph_connected_component {
    static class Edge {
       int src;
       int nbr;
