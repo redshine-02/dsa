@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class toh {
+public class toh_ {
 
     public static void main(String[] args) throws Exception {
         // write your code here
@@ -10,10 +10,10 @@ public class toh {
         int t1 = sc.nextInt();
         int t2 = sc.nextInt();
         int t3 = sc.nextInt();
-        toh1(n,t1,t2,t3);
+        toh(n,t1,t2,t3);
     }
 
-    public static void toh1(int n, int t1id, int t2id, int t3id){
+    public static void toh(int n, int t1id, int t2id, int t3id){
         if(n==0){
             return;
         }
