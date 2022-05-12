@@ -1,5 +1,5 @@
 import java.util.*;
-public class coin_change_per {
+public class coin_change_per_inf {
 
     public static int cc_permute(int[] arr ,int tar , String asf){
         if(tar<0){
