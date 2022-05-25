@@ -35,6 +35,4 @@ public class nQueen_bnb {
       }
   }
 
-}public class nQueen_bnb {
-    
 }
